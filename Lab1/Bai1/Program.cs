@@ -1,46 +1,6 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
-
 namespace Bai01
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int n;
-            Console.Write("Nhap so luong hinh muon tao:");
-            n = int.Parse(Console.ReadLine());
-            Random random = new Random();
-            Shape [] shape = new Shape[n];
-            for (int i = 0; i < n; i++)
-            {
-                int randomType = random.Next(1,5); //1.hình chữ nhật 2.hình tam giác 3.hình tròn 4.hình vuông
-                switch (randomType)
-                {
-                    case 1:
-                        shape[i] = new HinhChuNhat();
-                        break;
-                    case 2:
-                        shape[i] = new HinhTamGiac();
-                        break;
-                    case 3:
-                        shape[i] = new HinhTron();
-                        break;
-                    case 4:
-                        shape[i] = new HinhVuong();
-                        break;
-                default: break; 
-                }
-                shape[i].Nhap();
-            }
-            foreach(Shape h in shape)
-            {
-                h.Ve();
-                Console.WriteLine("Dien tich: " + h.DienTich());
-                Console.ReadKey();
-            }
-        }
-    }
     public class Diem
     {
         private float x;
@@ -90,6 +50,7 @@ namespace Bai01
             Console.WriteLine("Nhap toa do cho 4 dinh");
             for (int i = 0; i < sodinh.Length; i++)
             {
+                sodinh[i] = new Diem();
                 sodinh[i].Nhap();
             }
         }
@@ -101,8 +62,8 @@ namespace Bai01
         }
         public override void Ve()
         {
-            Console.WriteLine("Hinh chu nhat nay co cac tinh chat sau:\n");
-            Console.Write("\tToa do 4 dinh lan luot la: ");
+            Console.WriteLine("Hinh chu nhat nay co cac tinh chat sau:");
+            Console.WriteLine("\tToa do 4 dinh lan luot la: ");
             for (int i = 0; i < sodinh.Length; i++)
                 sodinh[i].Xuat();
         }
@@ -119,6 +80,7 @@ namespace Bai01
             Console.WriteLine("Nhap toa do cho 3 dinh");
             for (int i = 0; i < sodinh.Length; i++)
             {
+                sodinh[i] = new Diem();
                 sodinh[i].Nhap();
             }
         }
@@ -135,13 +97,13 @@ namespace Bai01
         }
         public override void Ve()
         {
-            Console.WriteLine("Hinh tam giac nay co cac tinh chat sau:\n");
-            Console.Write("\tToa do 3 dinh lan luot la: ");
+            Console.WriteLine("Hinh tam giac nay co cac tinh chat sau:");
+            Console.WriteLine("\tToa do 3 dinh lan luot la: ");
             for (int i = 0; i < sodinh.Length; i++)
                 sodinh[i].Xuat();
         }
     }
-    public class HinhTron : Shape
+    public class HinhTron  : Shape
     {
         private float r;
         public HinhTron()
@@ -152,8 +114,9 @@ namespace Bai01
         public override void Nhap()
         {
             Console.WriteLine("Nhap toa do tam: ");
+            sodinh[0] = new Diem();
             sodinh[0].Nhap();
-            Console.WriteLine("Nhap ban kinh: ");
+            Console.Write("Nhap ban kinh: ");
             r = float.Parse(Console.ReadLine());
         }
         public override float DienTich()
@@ -163,9 +126,10 @@ namespace Bai01
         }
         public override void Ve()
         {
-            Console.WriteLine("Hinh tron nay co cac tinh chat sau:\n");
+            Console.WriteLine("Hinh tron nay co cac tinh chat sau:");
             Console.Write("\tToa do tam la: ");
             sodinh[0].Xuat();
+            Console.WriteLine("\tBan kinh: " + r);
         }
     }
     public class HinhVuong : HinhChuNhat
@@ -180,6 +144,7 @@ namespace Bai01
             Console.WriteLine("Nhap toa do cho 4 dinh");
             for (int i = 0; i < sodinh.Length; i++)
             {
+                sodinh[i] = new Diem();
                 sodinh[i].Nhap();
             }
         }
@@ -190,11 +155,54 @@ namespace Bai01
         }
         public override void Ve()
         {
-            Console.WriteLine("Hinh vuong nay co cac tinh chat sau:\n");
-            Console.Write("\tToa do 4 dinh lan luot la: ");
+            Console.WriteLine("Hinh vuong nay co cac tinh chat sau:");
+            Console.WriteLine("\tToa do 4 dinh lan luot la: ");
             for (int i = 0; i < sodinh.Length; i++)
                 sodinh[i].Xuat();
         }
     }
-
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            Console.Write("Nhap so luong hinh muon tao:");
+            n = int.Parse(Console.ReadLine());
+            Random random = new Random();
+            Shape[] shape = new Shape[n];
+            //Các đỉnh được nhập theo ngược chiều kim đồng hồ
+            for (int i = 0; i < n; i++)
+            {
+                int randomType = random.Next(1, 5); //1.hình chữ nhật 2.hình tam giác 3.hình tròn 4.hình vuông
+                switch (randomType)
+                {
+                    case 1:
+                        Console.WriteLine("Hinh Chu Nhat");
+                        shape[i] = new HinhChuNhat();
+                        break;
+                    case 2:
+                        Console.WriteLine("Hinh Tam Giac");
+                        shape[i] = new HinhTamGiac();
+                        break;
+                    case 3:
+                        Console.WriteLine("Hinh Tron");
+                        shape[i] = new HinhTron();
+                        break;
+                    case 4:
+                        Console.WriteLine("Hinh Vuong");
+                        shape[i] = new HinhVuong();
+                        break;
+                    default: 
+                        break;
+                }
+                shape[i].Nhap();
+            }
+            foreach (Shape h in shape)
+            {
+                h.Ve();
+                Console.WriteLine("\tDien tich: " + h.DienTich());
+                Console.ReadKey();
+            }
+        }
+    }
 }
