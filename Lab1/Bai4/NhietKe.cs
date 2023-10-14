@@ -10,6 +10,10 @@ namespace Bai4
     {
         private double nhietDo;
         public event EventHandler suKienThayDoiNhietDo;
+        public NhietKe(double nhietDo = 27)
+        {
+            this.nhietDo= nhietDo; 
+        }
         public double NhietDo
         {
             get { return nhietDo; }

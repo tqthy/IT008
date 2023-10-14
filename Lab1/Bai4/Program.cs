@@ -17,7 +17,8 @@ namespace Bai4
             for(int i = 0; i < 20; i++)
             {
                 Random rnd = new Random();
-                nhietKe.NhietDo = rnd.Next(-30, 50);
+                double khoangDaoDong = -2 + (rnd.NextDouble() * (2 + 2));//[-2;2]   
+                nhietKe.NhietDo += khoangDaoDong;
                 Thread.Sleep(1000);
             }
         }
