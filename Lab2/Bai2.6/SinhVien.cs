@@ -10,16 +10,14 @@ namespace Bai2._6
     {
         private string mSSV;
         private string hoTen;
-        private string maLop;
         private double diemToan;
         private double diemAnh;
         private double diemVan;
 
-        public SinhVien(string mSSV = "unknown", string hoTen = "unknown", string maLop = "unknown", double diemToan = 0, double diemAnh = 0, double diemVan = 0)
+        public SinhVien(string mSSV = "unknown", string hoTen = "unknown", double diemToan = 0, double diemAnh = 0, double diemVan = 0)
         {
             this.mSSV = mSSV;
             this.hoTen = hoTen;
-            this.maLop = maLop;
             this.diemToan = diemToan;
             this.diemAnh = diemAnh;
             this.diemVan = diemVan;
@@ -27,7 +25,6 @@ namespace Bai2._6
 
         public string MSSV { get { return mSSV; } set { mSSV = value; } }
         public string HoTen { get { return hoTen; } set { hoTen = value; } }
-        public string MaLop { get { return maLop; } set { maLop = value; } }
         public double DiemToan
         {
             get { return diemToan; }
