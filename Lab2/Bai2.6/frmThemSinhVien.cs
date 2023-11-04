@@ -16,5 +16,10 @@ namespace Bai2._6
         {
             InitializeComponent();
         }
+
+        private void frmThemSinhVien_Load(object sender, EventArgs e)
+        {
+            cboGioiTinh.SelectedIndex = 2;//mặc định khi chưa nhập thông tin cho giới tính thì là chọn giới tính khác 
+        }
     }
 }

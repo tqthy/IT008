@@ -16,7 +16,7 @@ namespace Bai2._6
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmStart());
+            Application.Run(new frmThemSinhVien());
         }
     }
 }
