@@ -8,73 +8,46 @@ namespace Bai2._6
 {
     public class SinhVien
     {
-        private string mSSV;
-        private string hoTen;
-        private double diemToan;
-        private double diemAnh;
-        private double diemVan;
-
-        public SinhVien(string mSSV = "unknown", string hoTen = "unknown", double diemToan = 0, double diemAnh = 0, double diemVan = 0)
+        private string mssv;
+        private string hoten;
+        private string gioitinh;
+        private string ngaysinh;
+        private string diachi;
+        private string sdt;
+        private string email;
+        public SinhVien(string mssv = "null", string hoten = "null", string gioitinh = "null", string ngaysinh = "null",
+                            string diachi = "null", string sdt = "null", string email = "null")
         {
-            this.mSSV = mSSV;
-            this.hoTen = hoTen;
-            this.diemToan = diemToan;
-            this.diemAnh = diemAnh;
-            this.diemVan = diemVan;
+            this.mssv = mssv;
+            this.hoten = hoten;
+            this.gioitinh = gioitinh;
+            this.ngaysinh = ngaysinh;
+            this.diachi = diachi;
+            this.sdt = sdt;
+            this.email = email;
         }
-
-        public string MSSV { get { return mSSV; } set { mSSV = value; } }
-        public string HoTen { get { return hoTen; } set { hoTen = value; } }
-        public double DiemToan
+        public string Mssv
         {
-            get { return diemToan; }
+            get
+            {
+                return mssv;
+            }
             set
             {
-                if (value < 0 || value > 10)
-                {
-                    diemToan = 0;
-                }
-                else
-                {
-                    diemToan = value;
-                }
+                mssv = value;
             }
         }
-
-        public double DiemAnh
-        {
-            get { return diemAnh; }
+        public string Hoten
+        { get 
+            { 
+                return hoten;
+            }
             set
             {
-                if (value < 0 || value > 10)
-                {
-                    diemAnh = 0;
-                }
-                else
-                {
-                    diemAnh = value;
-                }
+                hoten = value;
             }
         }
-        public double DiemVan
-        {
-            get { return diemVan; }
-            set
-            {
-                if (value < 0 || value > 10)
-                {
-                    diemVan = 0;
-                }
-                else
-                {
-                    diemVan = value;
-                }
-            }
-        }
+      
 
-        public double DiemTrungBinh()
-        {
-            return (diemToan + diemVan + diemAnh) / 3;
-        }
     }
 }
