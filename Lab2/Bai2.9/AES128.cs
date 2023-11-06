@@ -62,7 +62,7 @@ namespace Bai2._9
         public static void EncryptToFile(string plainText, string filePath)
         {
             string encryptedText = EncryptString(plainText);
-            using (FileStream fStream = new FileStream("data.txt", FileMode.Append, FileAccess.Write))
+            using (FileStream fStream = new FileStream("user.txt", FileMode.Append, FileAccess.Write))
             {
                 using (StreamWriter sw = new StreamWriter(fStream))
                 {
@@ -75,7 +75,7 @@ namespace Bai2._9
         {
             var decryptedStrings = new List<string>();
 
-            using (FileStream fStream = new FileStream("data.txt", FileMode.Open, FileAccess.Read))
+            using (FileStream fStream = new FileStream("user.txt", FileMode.OpenOrCreate, FileAccess.Read))
             {
                 using (StreamReader sr = new StreamReader(fStream))
                 {

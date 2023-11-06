@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Bai2._9
 {
-    public partial class Form1 : Form
+    public partial class frmTextEditor : Form
     {
-        public Form1()
+        Form parent;
+        public frmTextEditor(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
+        }
+
+        private void frmTextEditor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parent.Show();
         }
     }
 }

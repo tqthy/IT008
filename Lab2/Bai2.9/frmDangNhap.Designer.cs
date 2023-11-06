@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblThongBao = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.btnQuenMatKhau = new System.Windows.Forms.Button();
+            this.erDangNhap = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.erDangNhap)).BeginInit();
             this.SuspendLayout();
             // 
             // lblThongBao
@@ -45,7 +48,7 @@
             this.lblThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThongBao.Location = new System.Drawing.Point(0, 0);
             this.lblThongBao.Name = "lblThongBao";
-            this.lblThongBao.Size = new System.Drawing.Size(489, 65);
+            this.lblThongBao.Size = new System.Drawing.Size(520, 65);
             this.lblThongBao.TabIndex = 0;
             this.lblThongBao.Text = "Hãy nhập tài khoản và mật khẩu";
             this.lblThongBao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -85,6 +88,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(179, 175);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(293, 35);
             this.txtPassword.TabIndex = 4;
             // 
@@ -98,6 +102,7 @@
             this.btnDangNhap.TabIndex = 5;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // btnDangKy
             // 
@@ -109,6 +114,7 @@
             this.btnDangKy.TabIndex = 6;
             this.btnDangKy.Text = "Đăng Ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // btnQuenMatKhau
             // 
@@ -120,13 +126,18 @@
             this.btnQuenMatKhau.TabIndex = 7;
             this.btnQuenMatKhau.Text = "Quên mật khẩu";
             this.btnQuenMatKhau.UseVisualStyleBackColor = false;
+            this.btnQuenMatKhau.Click += new System.EventHandler(this.btnQuenMatKhau_Click);
+            // 
+            // erDangNhap
+            // 
+            this.erDangNhap.ContainerControl = this;
             // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(489, 388);
+            this.ClientSize = new System.Drawing.Size(520, 388);
             this.Controls.Add(this.btnQuenMatKhau);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.btnDangNhap);
@@ -139,6 +150,7 @@
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            ((System.ComponentModel.ISupportInitialize)(this.erDangNhap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +166,6 @@
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button btnDangKy;
         private System.Windows.Forms.Button btnQuenMatKhau;
+        private System.Windows.Forms.ErrorProvider erDangNhap;
     }
 }

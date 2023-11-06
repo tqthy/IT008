@@ -20,7 +20,7 @@ namespace Bai2._9
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmQuenMatKhau());
+            Application.Run(new frmDangNhap());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
