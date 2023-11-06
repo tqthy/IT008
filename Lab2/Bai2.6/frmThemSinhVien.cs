@@ -24,11 +24,12 @@ namespace Bai2._6
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //Báo lỗi khi người dùng nhập định dạng mà mình không muốn
-            if (txtMSSV.Text == "")
+
+            if (txtMSSV.Text.Length != 8)
             {
-                erNguoiDung.SetError(txtMSSV, "MSSV không được để trống!");
+                erNguoiDung.SetError(txtMSSV, "MSSV phải có đúng 8 ký tự");
             }
+            
         }
 
 
@@ -40,6 +41,12 @@ namespace Bai2._6
             txtDiaChi.Text = "";
             txtEmail.Text = "";
             txtSDT.Text = "";
+        }
+
+        private void btnQuayLai_Click(object sender, EventArgs e)
+        {
+            //test xíu
+            // MessageBox.Show(MotSoPhuongThucBoTro.fomatDateTimePicker(dtpNgaySinh));
         }
     }
 }
