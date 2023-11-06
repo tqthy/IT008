@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Bai2._6
 {
@@ -29,6 +31,21 @@ namespace Bai2._6
             {
                 erNguoiDung.SetError(txtMSSV, "MSSV không được để trống!");
             }
+            //Khởi tạo connection đến SQL Server
+            using ( var connection = SqlServerConnection.Create() )
+            {
+                SqlCommand command;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                String sql = "";
+                //Lệnh SQL Insert ở dưới, sau khi sửa xong định dạng của dtpNgaySinh thì bỏ ẩn (bỏ //) để insert
+                //sql = "INSERT INTO SINHVIEN VALUES ('" + txtMSSV.Text + "', '" + txtHoTen.Text + "', '" + cboGioiTinh.Text + "', '" + dtpNgaySinh.Text + "', '" + txtDiaChi.Text + "', '" + txtSDT.Text + "', '" + txtEmail.Text + "')";
+                command = new SqlCommand(sql, connection);
+                adapter.InsertCommand = new SqlCommand(sql, connection);
+                adapter.InsertCommand.ExecuteNonQuery();
+                command.Dispose();
+                connection.Close();
+            }
+
         }
 
 
