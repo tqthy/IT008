@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Bai2._9
 {
@@ -121,5 +123,22 @@ namespace Bai2._9
                 }
             }
         }
+
+
+        //check tên file có thể đặt được k: chỉ chấp nhận chữ hoặc số
+        public static bool checkFileName(string fileName)
+        {
+           
+            foreach (char c in fileName)
+            {
+                if (!(kyTuTKChuan(c)))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
     }
 }
