@@ -26,24 +26,32 @@ namespace Bai2._6
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            bool flag = true;
 
-            if (txtMSSV.Text.Length != 8)
+            //if (txtMSSV.Text.Length != 8)
+            //{
+            //    flag = false;
+            //    erNguoiDung.SetError(txtMSSV, "MSSV phải có đúng 8 ký tự");
+            //}
+
+
+            //nếu người dùng không nhập lỗi gì thì cho phép thêm sinh viên
+            if (flag)
             {
-                erNguoiDung.SetError(txtMSSV, "MSSV phải có đúng 8 ký tự");
-            }
-            //Khởi tạo connection đến SQL Server
-            using ( var connection = SqlServerConnection.Create() )
-            {
-                SqlCommand command;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                String sql = "";
-                //Lệnh SQL Insert ở dưới, sau khi sửa xong định dạng của dtpNgaySinh thì bỏ ẩn (bỏ //) để insert
-                //sql = "INSERT INTO SINHVIEN VALUES ('" + txtMSSV.Text + "', '" + txtHoTen.Text + "', '" + cboGioiTinh.Text + "', '" + dtpNgaySinh.Text + "', '" + txtDiaChi.Text + "', '" + txtSDT.Text + "', '" + txtEmail.Text + "')";
-                command = new SqlCommand(sql, connection);
-                adapter.InsertCommand = new SqlCommand(sql, connection);
-                adapter.InsertCommand.ExecuteNonQuery();
-                command.Dispose();
-                connection.Close();
+                //Khởi tạo connection đến SQL Server
+                using (var connection = SqlServerConnection.Create())
+                {
+                    SqlCommand command;
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    String sql = "";
+                    //Lệnh SQL Insert ở dưới, sau khi sửa xong định dạng của dtpNgaySinh thì bỏ ẩn (bỏ //) để insert
+                    sql = "INSERT INTO SINHVIEN VALUES ('" + txtMSSV.Text + "', '" + txtHoTen.Text + "', '" + cboGioiTinh.SelectedItem.ToString() + "', '" + MotSoPhuongThucBoTro.fomatDateTimePicker(dtpNgaySinh) + "', '" + txtDiaChi.Text + "', '" + txtSDT.Text + "', '" + txtEmail.Text + "')";
+                    command = new SqlCommand(sql, connection);
+                    adapter.InsertCommand = new SqlCommand(sql, connection);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    command.Dispose();
+                    connection.Close();
+                }
             }
 
         }
@@ -61,8 +69,7 @@ namespace Bai2._6
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
-            //test xíu
-            // MessageBox.Show(MotSoPhuongThucBoTro.fomatDateTimePicker(dtpNgaySinh));
+           
         }
     }
 }
