@@ -26,31 +26,69 @@ namespace Bai2._6
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            erNguoiDung.Clear();
             bool flag = true;
 
-            //if (txtMSSV.Text.Length != 8)
-            //{
-            //    flag = false;
-            //    erNguoiDung.SetError(txtMSSV, "MSSV phải có đúng 8 ký tự");
-            //}
+            if (!MotSoPhuongThucBoTro.checkMSSV(txtMSSV.Text))
+            {
+                flag = false;
+                erNguoiDung.SetError(txtMSSV, "MSSV phải có đúng 8 ký tự,và không được có kí tự đặc biệt!");
+            }
+
+            if (!MotSoPhuongThucBoTro.checkHoTen(txtHoTen.Text))
+            {
+                flag=false;
+                erNguoiDung.SetError(txtHoTen, "Họ tên không được để trống, không quá 50 kí tự!"); ;
+            }
+
+            if (!MotSoPhuongThucBoTro.checkDiaChi(txtDiaChi.Text))
+            {
+                flag = false;
+                erNguoiDung.SetError(txtDiaChi, "Địa chỉ không được để trống và không được quá 70 kí tự!");
+            }
+
+            if (!MotSoPhuongThucBoTro.checkEmail(txtEmail.Text))
+            {
+                flag = false;
+                erNguoiDung.SetError(txtEmail, "Email không hợp lệ!");
+            }
+
+            if (!MotSoPhuongThucBoTro.checkSDT(txtSDT.Text))
+            {
+                flag = false;
+                erNguoiDung.SetError(txtSDT, "sdt không được để trống,chỉ chấp nhận có kí tự số, sđt phải có trên 8 số k quá 20 số!");
+            }
 
 
             //nếu người dùng không nhập lỗi gì thì cho phép thêm sinh viên
             if (flag)
             {
-                //Khởi tạo connection đến SQL Server
-                using (var connection = SqlServerConnection.Create())
+                try
                 {
-                    SqlCommand command;
-                    SqlDataAdapter adapter = new SqlDataAdapter();
-                    String sql = "";
-                    //Lệnh SQL Insert ở dưới, sau khi sửa xong định dạng của dtpNgaySinh thì bỏ ẩn (bỏ //) để insert
-                    sql = "INSERT INTO SINHVIEN VALUES ('" + txtMSSV.Text + "', '" + txtHoTen.Text + "', '" + cboGioiTinh.SelectedItem.ToString() + "', '" + MotSoPhuongThucBoTro.fomatDateTimePicker(dtpNgaySinh) + "', '" + txtDiaChi.Text + "', '" + txtSDT.Text + "', '" + txtEmail.Text + "')";
-                    command = new SqlCommand(sql, connection);
-                    adapter.InsertCommand = new SqlCommand(sql, connection);
-                    adapter.InsertCommand.ExecuteNonQuery();
-                    command.Dispose();
-                    connection.Close();
+                    //Khởi tạo connection đến SQL Server
+                    using (var connection = SqlServerConnection.Create())
+                    {
+                        SqlCommand command;
+                        SqlDataAdapter adapter = new SqlDataAdapter();
+                        String sql = "";
+                        //Lệnh SQL Insert ở dưới, sau khi sửa xong định dạng của dtpNgaySinh thì bỏ ẩn (bỏ //) để insert
+                        sql = "INSERT INTO SINHVIEN VALUES ('" + txtMSSV.Text + "', N'" + txtHoTen.Text + "', N'" + cboGioiTinh.SelectedItem.ToString() + "', '" + MotSoPhuongThucBoTro.fomatDateTimePicker(dtpNgaySinh) + "', N'" + txtDiaChi.Text + "', '" + txtSDT.Text + "', '" + txtEmail.Text + "')";
+                        command = new SqlCommand(sql, connection);
+                        adapter.InsertCommand = new SqlCommand(sql, connection);
+                        adapter.InsertCommand.ExecuteNonQuery();
+                        command.Dispose();
+                        connection.Close();
+                    }
+                }
+                catch (SqlException se)
+                {
+                    foreach (SqlError error in se.Errors)
+                    {
+                        if (MotSoPhuongThucBoTro.findUnique(error.Message))
+                        {
+                            MessageBox.Show("Đã tồn tại sinh viên có MSSV: " + txtMSSV.Text);
+                        }
+                    }
                 }
             }
 

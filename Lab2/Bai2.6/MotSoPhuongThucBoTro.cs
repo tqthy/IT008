@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Text.RegularExpressions;
+
 
 namespace Bai2._6
 {
@@ -57,25 +60,18 @@ namespace Bai2._6
             return true;
         }
 
-        //họ tên không được để trống, k quá 50 kí tự ,chỉ chấp nhận chuỗi có kí tự chữ
+        //họ tên không được để trống, k quá 50 kí tự 
         public static bool checkHoTen(string HoTen)
         {
             if((HoTen.Length==0)||(HoTen.Length>50))
             {
                 return false;
             }
-            foreach(char c in HoTen)
-            {
-                if (!(checkKiTuChu(c)))
-                {
-                    return false;
-                }
-            }
             return true;
         }
 
 
-        //địa chỉ không được để trống,k quá 70 kí tự, chỉ chấp nhận chuỗi có kí tự chữ ,số
+        //địa chỉ không được để trống,k quá 70 kí tự
         public static bool checkDiaChi(string DiaChi)
         {
             if ((DiaChi.Length == 0) || (DiaChi.Length > 70))
@@ -83,13 +79,6 @@ namespace Bai2._6
                 return false;
             }
 
-            foreach (char c in DiaChi)
-            {
-                if (!((checkKiTuChu(c)) || (checkKiTuSo(c))))
-                {
-                    return false;
-                }
-            }
             return true;
         }
 
@@ -97,7 +86,7 @@ namespace Bai2._6
         //sdt không được để trống,chỉ chấp nhận có kí tự số, sđt phải có trên 8 số k quá 20 số
         public static bool checkSDT(string SDT)
         {
-            if (SDT.Length<8||SDT.Length>20)
+            if (SDT.Length<9||SDT.Length>20)
             {
                 return false;
             }
@@ -111,7 +100,7 @@ namespace Bai2._6
             return true;
         }
 
-        //email không được để trống,chỉ chấp nhận có kí tự chữ, số, đồng thời không quá 50 kí tự
+        //email không hợp lệ
         public static bool checkEmail(string email)
         {
             if ((email.Length == 0) || (email.Length > 50))
@@ -119,14 +108,31 @@ namespace Bai2._6
                 return false;
             }
 
-            foreach (char c in email)
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
             {
-                if (!((checkKiTuChu(c)) || (checkKiTuSo(c))))
-                {
-                    return false;
-                }
+                string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
             }
-            return true;
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
+            }
         }
+
+
+        //phục vụ cho việc xử lý ngoại lệ cho ràng buộc unique ở form ThemSinhVien
+        public static bool findUnique(string s)
+        {
+            s = s.ToLower();
+            if (s.Contains("unique"))
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }
