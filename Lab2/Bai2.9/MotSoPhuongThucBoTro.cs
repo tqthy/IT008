@@ -140,5 +140,15 @@ namespace Bai2._9
         }
 
 
+        // hàm hỗ trợ so sánh text trong file và trong rich 
+        public static bool CompareContentWithFile(string filePath, string richTextBoxContent)
+        {
+            // Đọc toàn bộ nội dung của file
+            string fileContent = File.ReadAllText(filePath);
+
+            // So sánh nội dung của file và RichTextBox
+            return fileContent.Equals(richTextBoxContent);
+        }
+
     }
 }

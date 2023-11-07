@@ -12,9 +12,7 @@ using System.Windows.Forms;
 namespace Bai2._9
 {
     public partial class frmTextEditor : Form
-    {
- 
-       
+    {    
         public frmTextEditor()
         {
             InitializeComponent();
@@ -22,7 +20,17 @@ namespace Bai2._9
 
         private void frmTextEditor_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
+            if (rtbText.Visible)
+            {
+                if (!MotSoPhuongThucBoTro.CompareContentWithFile(pathOpen, rtbText.Text))
+                {
+                    DialogResult result = MessageBox.Show("Bạn quên lưu file rùi nè, bấm yes để lưu nào!", ">.<", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        mnuFileSave_Click(sender, e);
+                    }
+                }
+            }
         }
 
        
@@ -31,13 +39,14 @@ namespace Bai2._9
             rtbText.Visible = false;
             mnuFileSave.Visible = false;
             mnuFileMode.Visible = false;
-            
+            mnuFileClose.Visible = false;
         }
 
 
         string pathOpen = "";
         private void mnuFileOpen_Click(object sender, EventArgs e)
         {
+            
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.Filter = "File text|*.txt";//chỉ cho mở file .txt thôi
@@ -52,6 +61,12 @@ namespace Bai2._9
                             rtbText.Visible = true;
                             rtbText.Text = sr.ReadToEnd();
                             rtbText.ReadOnly = true;
+
+                            //mở xong thì cho phép chọn FileMode
+                            mnuFileMode.Visible=true;
+                            //mở xong thì menu save hiện,close hiện
+                            mnuFileSave.Visible=true;
+                            mnuFileClose.Visible = true;
                         }
                     }
                 }
@@ -97,6 +112,49 @@ namespace Bai2._9
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void mnuFileModeRead_Click(object sender, EventArgs e)
+        {
+            if (rtbText.Visible == true)
+            {
+                rtbText.ReadOnly = true;
+            }
+        }
+
+        private void mnuFileModeWrite_Click(object sender, EventArgs e)
+        {
+            if(rtbText.Visible == true)
+            {
+                rtbText.ReadOnly = false;
+            }
+        }
+
+        private void mnuFileSave_Click(object sender, EventArgs e)
+        {
+            using(FileStream fStream = new FileStream(pathOpen, FileMode.Create, FileAccess.Write))//tạm thời này ik,lười tối ưu quá
+            {
+                using (StreamWriter sw = new StreamWriter(fStream))
+                {
+                    sw.Write(rtbText.Text);
+                }
+            }
+        }
+
+        private void mnuFileClose_Click(object sender, EventArgs e)
+        {
+            if (!MotSoPhuongThucBoTro.CompareContentWithFile(pathOpen, rtbText.Text))
+            {
+                DialogResult result = MessageBox.Show("Bạn quên lưu file rùi nè, bạn có muốn lưu hông?", ">.<", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    mnuFileSave_Click(sender, e);
+                }
+            }
+            rtbText.Visible = false;
+            rtbText.ReadOnly = true;
+            mnuFileClose.Visible = false;
+            mnuFileMode.Visible = false;
         }
     }
 }

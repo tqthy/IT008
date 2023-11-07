@@ -39,6 +39,7 @@
             this.lblXinChao = new System.Windows.Forms.Label();
             this.rtbText = new System.Windows.Forms.RichTextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.mnuFileClose = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,8 @@
             this.mnuFileNew,
             this.mnuFileOpen,
             this.mnuFileSave,
-            this.mnuFileMode});
+            this.mnuFileMode,
+            this.mnuFileClose});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "File";
@@ -69,22 +71,23 @@
             // mnuFileNew
             // 
             this.mnuFileNew.Name = "mnuFileNew";
-            this.mnuFileNew.Size = new System.Drawing.Size(187, 34);
+            this.mnuFileNew.Size = new System.Drawing.Size(270, 34);
             this.mnuFileNew.Text = "New";
             this.mnuFileNew.Click += new System.EventHandler(this.mnuFileNew_Click);
             // 
             // mnuFileOpen
             // 
             this.mnuFileOpen.Name = "mnuFileOpen";
-            this.mnuFileOpen.Size = new System.Drawing.Size(187, 34);
+            this.mnuFileOpen.Size = new System.Drawing.Size(270, 34);
             this.mnuFileOpen.Text = "Open";
             this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
             // 
             // mnuFileSave
             // 
             this.mnuFileSave.Name = "mnuFileSave";
-            this.mnuFileSave.Size = new System.Drawing.Size(187, 34);
+            this.mnuFileSave.Size = new System.Drawing.Size(270, 34);
             this.mnuFileSave.Text = "Save";
+            this.mnuFileSave.Click += new System.EventHandler(this.mnuFileSave_Click);
             // 
             // mnuFileMode
             // 
@@ -92,20 +95,22 @@
             this.mnuFileModeRead,
             this.mnuFileModeWrite});
             this.mnuFileMode.Name = "mnuFileMode";
-            this.mnuFileMode.Size = new System.Drawing.Size(187, 34);
+            this.mnuFileMode.Size = new System.Drawing.Size(270, 34);
             this.mnuFileMode.Text = "FileMode";
             // 
             // mnuFileModeRead
             // 
             this.mnuFileModeRead.Name = "mnuFileModeRead";
-            this.mnuFileModeRead.Size = new System.Drawing.Size(156, 34);
+            this.mnuFileModeRead.Size = new System.Drawing.Size(270, 34);
             this.mnuFileModeRead.Text = "Read";
+            this.mnuFileModeRead.Click += new System.EventHandler(this.mnuFileModeRead_Click);
             // 
             // mnuFileModeWrite
             // 
             this.mnuFileModeWrite.Name = "mnuFileModeWrite";
-            this.mnuFileModeWrite.Size = new System.Drawing.Size(156, 34);
+            this.mnuFileModeWrite.Size = new System.Drawing.Size(270, 34);
             this.mnuFileModeWrite.Text = "Write";
+            this.mnuFileModeWrite.Click += new System.EventHandler(this.mnuFileModeWrite_Click);
             // 
             // lblXinChao
             // 
@@ -131,6 +136,13 @@
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
+            // 
+            // mnuFileClose
+            // 
+            this.mnuFileClose.Name = "mnuFileClose";
+            this.mnuFileClose.Size = new System.Drawing.Size(270, 34);
+            this.mnuFileClose.Text = "Close";
+            this.mnuFileClose.Click += new System.EventHandler(this.mnuFileClose_Click);
             // 
             // frmTextEditor
             // 
@@ -168,5 +180,6 @@
         private System.Windows.Forms.Label lblXinChao;
         private System.Windows.Forms.RichTextBox rtbText;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileClose;
     }
 }
