@@ -45,7 +45,7 @@ namespace Bai2._6
                     SqlDataAdapter adapter = new SqlDataAdapter();
                     String sql = "";
                     //Lệnh SQL Insert ở dưới, sau khi sửa xong định dạng của dtpNgaySinh thì bỏ ẩn (bỏ //) để insert
-                    sql = "INSERT INTO SINHVIEN VALUES ('" + txtMSSV.Text + "', '" + txtHoTen.Text + "', '" + cboGioiTinh.SelectedItem.ToString() + "', '" + MotSoPhuongThucBoTro.fomatDateTimePicker(dtpNgaySinh) + "', '" + txtDiaChi.Text + "', '" + txtSDT.Text + "', '" + txtEmail.Text + "')";
+                    sql = "INSERT INTO SINHVIEN VALUES ('" + txtMSSV.Text + "', N'" + txtHoTen.Text + "', N'" + cboGioiTinh.SelectedItem.ToString() + "', '" + MotSoPhuongThucBoTro.fomatDateTimePicker(dtpNgaySinh) + "', N'" + txtDiaChi.Text + "', '" + txtSDT.Text + "', '" + txtEmail.Text + "')";
                     command = new SqlCommand(sql, connection);
                     adapter.InsertCommand = new SqlCommand(sql, connection);
                     adapter.InsertCommand.ExecuteNonQuery();
