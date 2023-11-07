@@ -19,9 +19,5 @@ namespace Bai2._6
             return cnn;
         }
 
-        public static void Close(SqlConnection cnn)
-        {
-            cnn.Close();
-        }
     }
 }
