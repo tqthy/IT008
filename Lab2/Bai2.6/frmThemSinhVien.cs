@@ -84,7 +84,7 @@ namespace Bai2._6
                 {
                     foreach (SqlError error in se.Errors)
                     {
-                        if (MotSoPhuongThucBoTro.findUnique(error.Message))
+                        if (MotSoPhuongThucBoTro.findPrimary(error.Message))
                         {
                             MessageBox.Show("Đã tồn tại sinh viên có MSSV: " + txtMSSV.Text);
                         }

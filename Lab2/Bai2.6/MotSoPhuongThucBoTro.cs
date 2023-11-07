@@ -123,11 +123,11 @@ namespace Bai2._6
         }
 
 
-        //phục vụ cho việc xử lý ngoại lệ cho ràng buộc unique ở form ThemSinhVien
-        public static bool findUnique(string s)
+        //phục vụ cho việc xử lý ngoại lệ cho ràng buộc primary ở form ThemSinhVien
+        public static bool findPrimary(string s)
         {
             s = s.ToLower();
-            if (s.Contains("unique"))
+            if (s.Contains("primary"))
             {
                 return true;
             }
