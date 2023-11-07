@@ -69,21 +69,21 @@
             // mnuFileNew
             // 
             this.mnuFileNew.Name = "mnuFileNew";
-            this.mnuFileNew.Size = new System.Drawing.Size(270, 34);
+            this.mnuFileNew.Size = new System.Drawing.Size(187, 34);
             this.mnuFileNew.Text = "New";
             this.mnuFileNew.Click += new System.EventHandler(this.mnuFileNew_Click);
             // 
             // mnuFileOpen
             // 
             this.mnuFileOpen.Name = "mnuFileOpen";
-            this.mnuFileOpen.Size = new System.Drawing.Size(270, 34);
+            this.mnuFileOpen.Size = new System.Drawing.Size(187, 34);
             this.mnuFileOpen.Text = "Open";
             this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
             // 
             // mnuFileSave
             // 
             this.mnuFileSave.Name = "mnuFileSave";
-            this.mnuFileSave.Size = new System.Drawing.Size(270, 34);
+            this.mnuFileSave.Size = new System.Drawing.Size(187, 34);
             this.mnuFileSave.Text = "Save";
             // 
             // mnuFileMode
@@ -92,19 +92,19 @@
             this.mnuFileModeRead,
             this.mnuFileModeWrite});
             this.mnuFileMode.Name = "mnuFileMode";
-            this.mnuFileMode.Size = new System.Drawing.Size(270, 34);
+            this.mnuFileMode.Size = new System.Drawing.Size(187, 34);
             this.mnuFileMode.Text = "FileMode";
             // 
             // mnuFileModeRead
             // 
             this.mnuFileModeRead.Name = "mnuFileModeRead";
-            this.mnuFileModeRead.Size = new System.Drawing.Size(270, 34);
+            this.mnuFileModeRead.Size = new System.Drawing.Size(156, 34);
             this.mnuFileModeRead.Text = "Read";
             // 
             // mnuFileModeWrite
             // 
             this.mnuFileModeWrite.Name = "mnuFileModeWrite";
-            this.mnuFileModeWrite.Size = new System.Drawing.Size(270, 34);
+            this.mnuFileModeWrite.Size = new System.Drawing.Size(156, 34);
             this.mnuFileModeWrite.Text = "Write";
             // 
             // lblXinChao
@@ -148,6 +148,7 @@
             this.Text = "Text Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTextEditor_FormClosing);
             this.Load += new System.EventHandler(this.frmTextEditor_Load);
+            this.Shown += new System.EventHandler(this.frmTextEditor_Shown);
             this.mnuMenu.ResumeLayout(false);
             this.mnuMenu.PerformLayout();
             this.ResumeLayout(false);

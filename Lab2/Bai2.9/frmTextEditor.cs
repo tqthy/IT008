@@ -13,13 +13,8 @@ namespace Bai2._9
 {
     public partial class frmTextEditor : Form
     {
-        Form parent;
-        public frmTextEditor(Form parent)
-        {
-            InitializeComponent();
-            this.parent = parent;
-        }
-
+ 
+       
         public frmTextEditor()
         {
             InitializeComponent();
@@ -27,14 +22,16 @@ namespace Bai2._9
 
         private void frmTextEditor_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //parent.Show();
+           
         }
 
+       
         private void frmTextEditor_Load(object sender, EventArgs e)
         {
             rtbText.Visible = false;
             mnuFileSave.Visible = false;
             mnuFileMode.Visible = false;
+            
         }
 
 
@@ -93,5 +90,13 @@ namespace Bai2._9
             }
         }
 
+        private void frmTextEditor_Shown(object sender, EventArgs e)
+        {
+
+            using (frmDangNhap frm = new frmDangNhap(this))
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

@@ -196,6 +196,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(611, 587);
+            this.ControlBox = false;
             this.Controls.Add(this.lblChuY);
             this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.btnDangKy);

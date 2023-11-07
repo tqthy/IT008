@@ -22,7 +22,7 @@ namespace Bai2._9
 
         private void frmQuenMatKhau_FormClosing(object sender, FormClosingEventArgs e)
         {
-            parent.Show();
+            
         }
 
         private void btnQuayLai_Click(object sender, EventArgs e)

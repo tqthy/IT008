@@ -50,7 +50,7 @@
             this.lblThongBao.Name = "lblThongBao";
             this.lblThongBao.Size = new System.Drawing.Size(520, 65);
             this.lblThongBao.TabIndex = 0;
-            this.lblThongBao.Text = "Hãy nhập tài khoản và mật khẩu";
+            this.lblThongBao.Text = "Vui lòng đăng nhập";
             this.lblThongBao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblUsername
@@ -150,6 +150,7 @@
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDangNhap_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.erDangNhap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

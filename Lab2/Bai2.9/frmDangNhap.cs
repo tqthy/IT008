@@ -13,27 +13,38 @@ namespace Bai2._9
 {
     public partial class frmDangNhap : Form
     {
-        public frmDangNhap()
+        Form parent;
+        bool flagdn = false;//đăng nhập thành công thì bật cờ
+        public frmDangNhap(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            frmDangKy frm = new frmDangKy(this);
-            frm.Show();
-            this.Hide();
+            using (frmDangKy frm = new frmDangKy(this))
+            {
+                this.Hide();
+                frm.ShowDialog();
+                this.Show();
+            }
         }
+
 
         private void btnQuenMatKhau_Click(object sender, EventArgs e)
         {
-            frmQuenMatKhau frm=new frmQuenMatKhau(this);
-            frm.Show();
-            this.Hide();
+            using (frmQuenMatKhau frm = new frmQuenMatKhau(this))
+            {
+                this.Hide();
+                frm.ShowDialog();
+                this.Show();
+            }
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            flagdn = false;
             erDangNhap.Clear();
             bool flag = true;
 
@@ -59,9 +70,9 @@ namespace Bai2._9
                     string pass = userPass[1];
                     if ((user == txtUsername.Text) && (pass == txtPassword.Text))
                     {
-                        frmTextEditor frm = new frmTextEditor(this);
-                        frm.Show();
-                        this.Hide();
+                        MessageBox.Show("Đăng nhập thành công!");
+                        flagdn = true;
+                        this.Close();
                         return;
                     }
 
@@ -69,6 +80,22 @@ namespace Bai2._9
                 MessageBox.Show("Thông tin tài khoản hoặc mật khẩu không chính xác"); ;
             }
 
+        }
+
+        private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!flagdn)
+            {
+                DialogResult result = MessageBox.Show("Bạn chắc chắn muốn thoát chứ?", "-.-", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    parent.Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }              
+            }
         }
     }
 }
