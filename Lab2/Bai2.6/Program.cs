@@ -20,7 +20,7 @@ namespace Bai2._6
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSuaThongTinSinhVien());
+            Application.Run(new frmStart());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();

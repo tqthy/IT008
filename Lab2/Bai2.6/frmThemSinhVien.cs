@@ -12,11 +12,14 @@ using System.Data.SqlClient;
 
 namespace Bai2._6
 {
+    
     public partial class frmThemSinhVien : Form
     {
-        public frmThemSinhVien()
+        Form parent;
+        public frmThemSinhVien(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
 
         private void frmThemSinhVien_Load(object sender, EventArgs e)
@@ -107,7 +110,7 @@ namespace Bai2._6
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
-           
+            this.Close();
         }
     }
 }

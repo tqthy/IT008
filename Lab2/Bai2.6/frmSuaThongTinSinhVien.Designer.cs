@@ -236,6 +236,7 @@
             this.btnQuayLai.TabIndex = 20;
             this.btnQuayLai.Text = "Quay lại";
             this.btnQuayLai.UseVisualStyleBackColor = true;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
             // frmSuaThongTinSinhVien
             // 

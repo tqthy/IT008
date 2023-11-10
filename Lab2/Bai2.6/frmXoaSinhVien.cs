@@ -12,9 +12,11 @@ namespace Bai2._6
 {
     public partial class frmXoaSinhVien : Form
     {
-        public frmXoaSinhVien()
+        Form parent;
+        public frmXoaSinhVien(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
     }
 }

@@ -32,5 +32,29 @@ namespace Bai2._6
                 e.Cancel = true;
             
         }
+
+        private void btnTimKiem_DanhSach_Click(object sender, EventArgs e)
+        {
+            frmDanhSachSinhVien form2 = new frmDanhSachSinhVien(this);
+            form2.ShowDialog(this);
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            frmThemSinhVien form2 = new frmThemSinhVien(this);
+            form2.ShowDialog(this); 
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            frmXoaSinhVien form2 = new frmXoaSinhVien(this);
+            form2.ShowDialog(this);
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            frmSuaThongTinSinhVien form2 = new frmSuaThongTinSinhVien(this);
+            form2.ShowDialog(this);
+        }
     }
 }

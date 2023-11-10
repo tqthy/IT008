@@ -12,11 +12,16 @@ namespace Bai2._6
 {
     public partial class frmSuaThongTinSinhVien : Form
     {
-        public frmSuaThongTinSinhVien()
+        Form parent;
+        public frmSuaThongTinSinhVien(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
 
-
+        private void btnQuayLai_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
