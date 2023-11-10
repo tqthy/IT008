@@ -17,26 +17,7 @@ namespace Bai2._6
             InitializeComponent();
         }
 
-        private void txtmssv_TextChanged(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string find_mssv = txtmssv.Text;
-
-
-        }
-
-        private void btnDanhSach_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

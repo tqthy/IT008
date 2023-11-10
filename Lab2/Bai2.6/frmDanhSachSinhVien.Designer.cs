@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.frmdssv = new System.Windows.Forms.Label();
+            this.lblDanhSach = new System.Windows.Forms.Label();
             this.lbnhapmssv = new System.Windows.Forms.Label();
             this.txtmssv = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -41,29 +41,31 @@
             this.clnDiachi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnSdt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnQuayLai = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // frmdssv
+            // lblDanhSach
             // 
-            this.frmdssv.BackColor = System.Drawing.Color.SteelBlue;
-            this.frmdssv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.frmdssv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.frmdssv.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frmdssv.ForeColor = System.Drawing.Color.White;
-            this.frmdssv.Location = new System.Drawing.Point(0, 0);
-            this.frmdssv.Name = "frmdssv";
-            this.frmdssv.Size = new System.Drawing.Size(1061, 56);
-            this.frmdssv.TabIndex = 0;
-            this.frmdssv.Text = "DANH SÁCH SINH VIÊN";
-            this.frmdssv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDanhSach.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblDanhSach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDanhSach.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDanhSach.ForeColor = System.Drawing.Color.White;
+            this.lblDanhSach.Location = new System.Drawing.Point(0, 0);
+            this.lblDanhSach.Name = "lblDanhSach";
+            this.lblDanhSach.Size = new System.Drawing.Size(973, 56);
+            this.lblDanhSach.TabIndex = 0;
+            this.lblDanhSach.Text = "DANH SÁCH SINH VIÊN";
+            this.lblDanhSach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbnhapmssv
             // 
+            this.lbnhapmssv.BackColor = System.Drawing.Color.White;
             this.lbnhapmssv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbnhapmssv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbnhapmssv.Location = new System.Drawing.Point(136, 100);
+            this.lbnhapmssv.Location = new System.Drawing.Point(138, 79);
             this.lbnhapmssv.Name = "lbnhapmssv";
-            this.lbnhapmssv.Size = new System.Drawing.Size(167, 33);
+            this.lbnhapmssv.Size = new System.Drawing.Size(153, 35);
             this.lbnhapmssv.TabIndex = 1;
             this.lbnhapmssv.Text = "Nhập MSSV ";
             this.lbnhapmssv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,36 +73,33 @@
             // txtmssv
             // 
             this.txtmssv.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtmssv.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmssv.Location = new System.Drawing.Point(357, 102);
+            this.txtmssv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmssv.Location = new System.Drawing.Point(335, 81);
             this.txtmssv.Multiline = true;
             this.txtmssv.Name = "txtmssv";
-            this.txtmssv.Size = new System.Drawing.Size(193, 33);
+            this.txtmssv.Size = new System.Drawing.Size(326, 33);
             this.txtmssv.TabIndex = 2;
-            this.txtmssv.TextChanged += new System.EventHandler(this.txtmssv_TextChanged);
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(693, 103);
+            this.btnTimKiem.Location = new System.Drawing.Point(730, 80);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(122, 34);
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnDanhSach
             // 
             this.btnDanhSach.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnDanhSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhSach.Location = new System.Drawing.Point(570, 157);
+            this.btnDanhSach.Location = new System.Drawing.Point(299, 130);
             this.btnDanhSach.Name = "btnDanhSach";
             this.btnDanhSach.Size = new System.Drawing.Size(387, 37);
             this.btnDanhSach.TabIndex = 4;
             this.btnDanhSach.Text = "Hiển thị toàn bộ danh sách sinh viên";
             this.btnDanhSach.UseVisualStyleBackColor = true;
-            this.btnDanhSach.Click += new System.EventHandler(this.btnDanhSach_Click);
             // 
             // listView1
             // 
@@ -113,15 +112,14 @@
             this.clnSdt,
             this.clnEmail});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 200);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1061, 310);
+            this.listView1.Size = new System.Drawing.Size(973, 310);
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // clnMssv
             // 
@@ -163,19 +161,32 @@
             this.clnEmail.Text = "Email";
             this.clnEmail.Width = 190;
             // 
+            // btnQuayLai
+            // 
+            this.btnQuayLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuayLai.Location = new System.Drawing.Point(730, 130);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(122, 34);
+            this.btnQuayLai.TabIndex = 6;
+            this.btnQuayLai.Text = "Quay lại";
+            this.btnQuayLai.UseVisualStyleBackColor = true;
+            // 
             // frmDanhSachSinhVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 510);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(973, 510);
+            this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnDanhSach);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtmssv);
             this.Controls.Add(this.lbnhapmssv);
-            this.Controls.Add(this.frmdssv);
+            this.Controls.Add(this.lblDanhSach);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmDanhSachSinhVien";
-            this.Text = "frmDanhSachSinhVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Danh sách sinh viên";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,7 +194,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label frmdssv;
+        private System.Windows.Forms.Label lblDanhSach;
         private System.Windows.Forms.Label lbnhapmssv;
         private System.Windows.Forms.TextBox txtmssv;
         private System.Windows.Forms.Button btnTimKiem;
@@ -196,5 +207,6 @@
         private System.Windows.Forms.ColumnHeader clnDiachi;
         private System.Windows.Forms.ColumnHeader clnSdt;
         private System.Windows.Forms.ColumnHeader clnEmail;
+        private System.Windows.Forms.Button btnQuayLai;
     }
 }
