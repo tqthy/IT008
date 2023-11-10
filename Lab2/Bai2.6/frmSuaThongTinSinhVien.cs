@@ -23,5 +23,17 @@ namespace Bai2._6
         {
             this.Close();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtDiaChi.Text = "";
+            txtEmail.Text = "";
+            cboGioiTinh.Text = "";
+            txtHoVaTen.Text = "";
+            txtMSSVCu.Text = "";
+            txtMSSVMoi.Text = "";
+            dtpNgaySinh.Text = "";
+            txtSĐT.Text = "";
+        }
     }
 }

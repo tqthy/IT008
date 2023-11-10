@@ -40,15 +40,15 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.txtMSSVMoi = new System.Windows.Forms.TextBox();
             this.txtHoVaTen = new System.Windows.Forms.TextBox();
-            this.txtNgaySinh = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtSĐT = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.txtMSSVCu = new System.Windows.Forms.TextBox();
             this.lblThongTinMoi = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.cboGioiTinh = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblSuaThongTin
@@ -160,14 +160,6 @@
             this.txtHoVaTen.Size = new System.Drawing.Size(307, 30);
             this.txtHoVaTen.TabIndex = 11;
             // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgaySinh.Location = new System.Drawing.Point(147, 284);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(307, 30);
-            this.txtNgaySinh.TabIndex = 12;
-            // 
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,14 +184,6 @@
             this.txtEmail.Size = new System.Drawing.Size(307, 30);
             this.txtEmail.TabIndex = 15;
             // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioiTinh.Location = new System.Drawing.Point(147, 338);
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(307, 30);
-            this.txtGioiTinh.TabIndex = 16;
-            // 
             // txtMSSVCu
             // 
             this.txtMSSVCu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,8 +194,8 @@
             // 
             // lblThongTinMoi
             // 
-            this.lblThongTinMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblThongTinMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblThongTinMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lblThongTinMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblThongTinMoi.Location = new System.Drawing.Point(298, 126);
             this.lblThongTinMoi.Name = "lblThongTinMoi";
             this.lblThongTinMoi.Size = new System.Drawing.Size(394, 42);
@@ -227,6 +211,7 @@
             this.btnReset.TabIndex = 19;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnQuayLai
             // 
@@ -238,20 +223,40 @@
             this.btnQuayLai.UseVisualStyleBackColor = true;
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(147, 284);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(307, 30);
+            this.dtpNgaySinh.TabIndex = 21;
+            // 
+            // cboGioiTinh
+            // 
+            this.cboGioiTinh.FormattingEnabled = true;
+            this.cboGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cboGioiTinh.Location = new System.Drawing.Point(147, 339);
+            this.cboGioiTinh.Name = "cboGioiTinh";
+            this.cboGioiTinh.Size = new System.Drawing.Size(307, 33);
+            this.cboGioiTinh.TabIndex = 22;
+            // 
             // frmSuaThongTinSinhVien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(992, 538);
+            this.Controls.Add(this.cboGioiTinh);
+            this.Controls.Add(this.dtpNgaySinh);
             this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.lblThongTinMoi);
             this.Controls.Add(this.txtMSSVCu);
-            this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtSĐT);
             this.Controls.Add(this.txtDiaChi);
-            this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.txtHoVaTen);
             this.Controls.Add(this.txtMSSVMoi);
             this.Controls.Add(this.btnLuu);
@@ -287,14 +292,14 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.TextBox txtMSSVMoi;
         private System.Windows.Forms.TextBox txtHoVaTen;
-        private System.Windows.Forms.TextBox txtNgaySinh;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtSĐT;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.TextBox txtMSSVCu;
         private System.Windows.Forms.Label lblThongTinMoi;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnQuayLai;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
+        private System.Windows.Forms.ComboBox cboGioiTinh;
     }
 }
