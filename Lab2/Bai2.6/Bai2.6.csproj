@@ -90,6 +90,9 @@
     <EmbeddedResource Include="frmDanhSachSinhVien.resx">
       <DependentUpon>frmDanhSachSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmStart.resx">
+      <DependentUpon>frmStart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThemSinhVien.resx">
       <DependentUpon>frmThemSinhVien.cs</DependentUpon>
     </EmbeddedResource>
