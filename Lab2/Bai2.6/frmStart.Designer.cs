@@ -109,6 +109,7 @@
             this.Name = "frmStart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmStart_FormClosing);
             this.grbChucNang.ResumeLayout(false);
             this.ResumeLayout(false);
 

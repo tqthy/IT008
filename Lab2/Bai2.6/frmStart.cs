@@ -16,5 +16,19 @@ namespace Bai2._6
         {
             InitializeComponent();
         }
+
+        private void frmStart_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result =
+                    MessageBox.Show("Bạn có muốn thoát",
+                                   "Exit?",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
+            {
+                Close();
+            }
+            
+        }
     }
 }
