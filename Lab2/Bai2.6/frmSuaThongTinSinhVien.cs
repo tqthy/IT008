@@ -16,5 +16,7 @@ namespace Bai2._6
         {
             InitializeComponent();
         }
+
+
     }
 }
