@@ -26,8 +26,10 @@ namespace Bai2._6
                                     MessageBoxIcon.Question);
             if(result == DialogResult.Yes)
             {
-                Close();
+                e.Cancel = false;
             }
+            else
+                e.Cancel = true;
             
         }
     }
