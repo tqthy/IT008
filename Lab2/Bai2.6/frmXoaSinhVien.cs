@@ -18,5 +18,28 @@ namespace Bai2._6
             InitializeComponent();
             this.parent = parent;
         }
+
+        private void btnDongY_Click(object sender, EventArgs e)
+        {
+            if (txtMSSVOrHoTen.Text == "")
+            {
+                erNguoiDung.SetError(txtMSSVOrHoTen, "Không được để trống!");
+                return;
+            }
+
+            if (rdbMSSV.Checked)//xóa theo MSSV
+            {
+
+            }
+            else//xóa theo Họ Tên
+            {
+
+            }
+        }
+
+        private void btnQuayLai_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
