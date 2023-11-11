@@ -37,6 +37,7 @@
             this.Name = "frmPaint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paint";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmPaint_Paint);
             this.ResumeLayout(false);
 
         }

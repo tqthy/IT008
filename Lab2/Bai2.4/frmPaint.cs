@@ -16,5 +16,19 @@ namespace Bai2._4
         {
             InitializeComponent();
         }
+
+        private void frmPaint_Paint(object sender, PaintEventArgs e)
+        {
+            Random random = new Random();
+            int x = random.Next(0, this.Width);
+            int y = random.Next(0, this.Height);
+
+            Font drawfont = new Font("Arial", 14);
+
+            SolidBrush drawbrush = new SolidBrush(Color.Red);
+
+            Graphics graphics = e.Graphics;
+            graphics.DrawString("Paint event", drawfont, drawbrush, new PointF(x, y));
+        }
     }
 }
