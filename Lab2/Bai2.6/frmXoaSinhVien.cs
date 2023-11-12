@@ -56,6 +56,7 @@ namespace Bai2._6
                     connection.Close();
                 }
             }
+            txtMSSVOrHoTen.Text = "";
         }
 
         private void btnQuayLai_Click(object sender, EventArgs e)
