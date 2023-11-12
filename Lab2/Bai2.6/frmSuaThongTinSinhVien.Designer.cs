@@ -41,7 +41,7 @@
             this.txtMSSVMoi = new System.Windows.Forms.TextBox();
             this.txtHoVaTen = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.txtSĐT = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtMSSVCu = new System.Windows.Forms.TextBox();
             this.lblThongTinMoi = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.lblMSSVCu.AutoSize = true;
             this.lblMSSVCu.Location = new System.Drawing.Point(31, 93);
             this.lblMSSVCu.Name = "lblMSSVCu";
-            this.lblMSSVCu.Size = new System.Drawing.Size(484, 25);
+            this.lblMSSVCu.Size = new System.Drawing.Size(761, 37);
             this.lblMSSVCu.TabIndex = 1;
             this.lblMSSVCu.Text = "Nhập MSSV của sinh viên cần thay đổi thông tin:";
             // 
@@ -77,7 +77,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(505, 284);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(72, 25);
+            this.lblEmail.Size = new System.Drawing.Size(112, 37);
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "Email:";
             // 
@@ -86,7 +86,7 @@
             this.lblSDT.AutoSize = true;
             this.lblSDT.Location = new System.Drawing.Point(505, 230);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(63, 25);
+            this.lblSDT.Size = new System.Drawing.Size(94, 37);
             this.lblSDT.TabIndex = 3;
             this.lblSDT.Text = "SĐT:";
             // 
@@ -95,7 +95,7 @@
             this.lblGioiTinh.AutoSize = true;
             this.lblGioiTinh.Location = new System.Drawing.Point(22, 338);
             this.lblGioiTinh.Name = "lblGioiTinh";
-            this.lblGioiTinh.Size = new System.Drawing.Size(98, 25);
+            this.lblGioiTinh.Size = new System.Drawing.Size(154, 37);
             this.lblGioiTinh.TabIndex = 4;
             this.lblGioiTinh.Text = "Giới tính:";
             // 
@@ -104,7 +104,7 @@
             this.lblNgaySinh.AutoSize = true;
             this.lblNgaySinh.Location = new System.Drawing.Point(22, 284);
             this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(115, 25);
+            this.lblNgaySinh.Size = new System.Drawing.Size(179, 37);
             this.lblNgaySinh.TabIndex = 5;
             this.lblNgaySinh.Text = "Ngày sinh:";
             // 
@@ -113,7 +113,7 @@
             this.lblDiaChi.AutoSize = true;
             this.lblDiaChi.Location = new System.Drawing.Point(505, 176);
             this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(85, 25);
+            this.lblDiaChi.Size = new System.Drawing.Size(132, 37);
             this.lblDiaChi.TabIndex = 6;
             this.lblDiaChi.Text = "Địa chỉ:";
             // 
@@ -122,7 +122,7 @@
             this.lblHoVaTen.AutoSize = true;
             this.lblHoVaTen.Location = new System.Drawing.Point(22, 230);
             this.lblHoVaTen.Name = "lblHoVaTen";
-            this.lblHoVaTen.Size = new System.Drawing.Size(111, 25);
+            this.lblHoVaTen.Size = new System.Drawing.Size(172, 37);
             this.lblHoVaTen.TabIndex = 7;
             this.lblHoVaTen.Text = "Họ và tên:";
             // 
@@ -131,7 +131,7 @@
             this.lblMSSVmoi.AutoSize = true;
             this.lblMSSVmoi.Location = new System.Drawing.Point(22, 176);
             this.lblMSSVmoi.Name = "lblMSSVmoi";
-            this.lblMSSVmoi.Size = new System.Drawing.Size(82, 25);
+            this.lblMSSVmoi.Size = new System.Drawing.Size(121, 37);
             this.lblMSSVmoi.TabIndex = 8;
             this.lblMSSVmoi.Text = "MSSV:";
             // 
@@ -143,13 +143,14 @@
             this.btnLuu.TabIndex = 9;
             this.btnLuu.Text = "Lưu thay đổi";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtMSSVMoi
             // 
             this.txtMSSVMoi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMSSVMoi.Location = new System.Drawing.Point(147, 176);
             this.txtMSSVMoi.Name = "txtMSSVMoi";
-            this.txtMSSVMoi.Size = new System.Drawing.Size(307, 30);
+            this.txtMSSVMoi.Size = new System.Drawing.Size(307, 44);
             this.txtMSSVMoi.TabIndex = 10;
             // 
             // txtHoVaTen
@@ -157,7 +158,7 @@
             this.txtHoVaTen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoVaTen.Location = new System.Drawing.Point(147, 230);
             this.txtHoVaTen.Name = "txtHoVaTen";
-            this.txtHoVaTen.Size = new System.Drawing.Size(307, 30);
+            this.txtHoVaTen.Size = new System.Drawing.Size(307, 44);
             this.txtHoVaTen.TabIndex = 11;
             // 
             // txtDiaChi
@@ -165,23 +166,23 @@
             this.txtDiaChi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(641, 176);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(307, 30);
+            this.txtDiaChi.Size = new System.Drawing.Size(307, 44);
             this.txtDiaChi.TabIndex = 13;
             // 
-            // txtSĐT
+            // txtSDT
             // 
-            this.txtSĐT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSĐT.Location = new System.Drawing.Point(641, 230);
-            this.txtSĐT.Name = "txtSĐT";
-            this.txtSĐT.Size = new System.Drawing.Size(307, 30);
-            this.txtSĐT.TabIndex = 14;
+            this.txtSDT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(641, 230);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(307, 44);
+            this.txtSDT.TabIndex = 14;
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(641, 284);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(307, 30);
+            this.txtEmail.Size = new System.Drawing.Size(307, 44);
             this.txtEmail.TabIndex = 15;
             // 
             // txtMSSVCu
@@ -189,7 +190,7 @@
             this.txtMSSVCu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMSSVCu.Location = new System.Drawing.Point(568, 93);
             this.txtMSSVCu.Name = "txtMSSVCu";
-            this.txtMSSVCu.Size = new System.Drawing.Size(300, 30);
+            this.txtMSSVCu.Size = new System.Drawing.Size(300, 44);
             this.txtMSSVCu.TabIndex = 17;
             // 
             // lblThongTinMoi
@@ -229,7 +230,7 @@
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(147, 284);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(307, 30);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(307, 44);
             this.dtpNgaySinh.TabIndex = 21;
             // 
             // cboGioiTinh
@@ -240,7 +241,7 @@
             "Nữ"});
             this.cboGioiTinh.Location = new System.Drawing.Point(147, 339);
             this.cboGioiTinh.Name = "cboGioiTinh";
-            this.cboGioiTinh.Size = new System.Drawing.Size(307, 33);
+            this.cboGioiTinh.Size = new System.Drawing.Size(307, 45);
             this.cboGioiTinh.TabIndex = 22;
             // 
             // frmSuaThongTinSinhVien
@@ -255,7 +256,7 @@
             this.Controls.Add(this.lblThongTinMoi);
             this.Controls.Add(this.txtMSSVCu);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtSĐT);
+            this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtHoVaTen);
             this.Controls.Add(this.txtMSSVMoi);
@@ -293,7 +294,7 @@
         private System.Windows.Forms.TextBox txtMSSVMoi;
         private System.Windows.Forms.TextBox txtHoVaTen;
         private System.Windows.Forms.TextBox txtDiaChi;
-        private System.Windows.Forms.TextBox txtSĐT;
+        private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtMSSVCu;
         private System.Windows.Forms.Label lblThongTinMoi;
