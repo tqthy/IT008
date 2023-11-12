@@ -51,7 +51,7 @@ namespace Bai2._6
                 {
                     SqlCommand command;
                     SqlDataAdapter adapter = new SqlDataAdapter();
-                    string sql = "UPDATE SINHVIEN SET MSSV='" + txtMSSVMoi.Text + "', HOTEN=N'" + txtHoVaTen.Text + "', GIOITINH=N'" + cboGioiTinh.Text + "', NGAYSINH='" + dtpNgaySinh.Text + "', DIACHI=N'" + txtDiaChi.Text + "', SDT='" + txtSDT.Text + "', EMAIL='" + txtEmail.Text + "' WHERE MSSV='" + txtMSSVCu + "'";
+                    string sql = "UPDATE SINHVIEN SET MSSV='" + txtMSSVMoi.Text + "', HOTEN=N'" + txtHoVaTen.Text + "', GIOITINH=N'" + cboGioiTinh.Text + "', NGAYSINH='" + MotSoPhuongThucBoTro.fomatDateTimePicker(dtpNgaySinh) + "', DIACHI=N'" + txtDiaChi.Text + "', SDT='" + txtSDT.Text + "', EMAIL='" + txtEmail.Text + "' WHERE MSSV='" + txtMSSVCu.Text + "'";
                     command = new SqlCommand(sql, connection);
                     adapter.UpdateCommand = new SqlCommand(sql, connection);
                     adapter.UpdateCommand.ExecuteNonQuery();
