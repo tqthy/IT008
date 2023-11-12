@@ -96,12 +96,13 @@ namespace Bai2._6
                 if (!tonTaiMSSV)
                 {
                     MessageBox.Show("Nhập thông tin sinh viên thành công!");
+                    txtMSSV.Text = "";
+                    txtHoTen.Text = "";
+                    txtDiaChi.Text = "";
+                    txtSDT.Text = "";
+                    txtEmail.Text = "";
                 }
-                txtMSSV.Text = "";
-                txtHoTen.Text = "";
-                txtDiaChi.Text = "";
-                txtSDT.Text = "";
-                txtEmail.Text = "";
+                
             }
 
         }
