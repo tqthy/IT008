@@ -66,6 +66,7 @@ namespace Bai2._6
             //nếu người dùng không nhập lỗi gì thì cho phép thêm sinh viên
             if (flag)
             {
+                bool tonTaiMSSV = false;
                 try
                 {
                     //Khởi tạo connection đến SQL Server
@@ -73,9 +74,7 @@ namespace Bai2._6
                     {
                         SqlCommand command;
                         SqlDataAdapter adapter = new SqlDataAdapter();
-                        String sql = "";
-                        //Lệnh SQL Insert ở dưới, sau khi sửa xong định dạng của dtpNgaySinh thì bỏ ẩn (bỏ //) để insert
-                        sql = "INSERT INTO SINHVIEN VALUES ('" + txtMSSV.Text + "', N'" + txtHoTen.Text + "', N'" + cboGioiTinh.SelectedItem.ToString() + "', '" + MotSoPhuongThucBoTro.fomatDateTimePicker(dtpNgaySinh) + "', N'" + txtDiaChi.Text + "', '" + txtSDT.Text + "', '" + txtEmail.Text + "')";
+                        string sql = "INSERT INTO SINHVIEN VALUES ('" + txtMSSV.Text + "', N'" + txtHoTen.Text + "', N'" + cboGioiTinh.SelectedItem.ToString() + "', '" + MotSoPhuongThucBoTro.fomatDateTimePicker(dtpNgaySinh) + "', N'" + txtDiaChi.Text + "', '" + txtSDT.Text + "', '" + txtEmail.Text + "')";
                         command = new SqlCommand(sql, connection);
                         adapter.InsertCommand = new SqlCommand(sql, connection);
                         adapter.InsertCommand.ExecuteNonQuery();
@@ -89,10 +88,20 @@ namespace Bai2._6
                     {
                         if (MotSoPhuongThucBoTro.findPrimary(error.Message))
                         {
+                            tonTaiMSSV = true;
                             MessageBox.Show("Đã tồn tại sinh viên có MSSV: " + txtMSSV.Text);
                         }
                     }
                 }
+                if (!tonTaiMSSV)
+                {
+                    MessageBox.Show("Nhập thông tin sinh viên thành công!");
+                }
+                txtMSSV.Text = "";
+                txtHoTen.Text = "";
+                txtDiaChi.Text = "";
+                txtSDT.Text = "";
+                txtEmail.Text = "";
             }
 
         }

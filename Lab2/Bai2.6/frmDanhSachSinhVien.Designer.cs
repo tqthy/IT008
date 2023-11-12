@@ -89,6 +89,7 @@
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnDanhSach
             // 
@@ -100,6 +101,7 @@
             this.btnDanhSach.TabIndex = 4;
             this.btnDanhSach.Text = "Hiển thị toàn bộ danh sách sinh viên";
             this.btnDanhSach.UseVisualStyleBackColor = true;
+            this.btnDanhSach.Click += new System.EventHandler(this.btnDanhSach_Click);
             // 
             // listView1
             // 
